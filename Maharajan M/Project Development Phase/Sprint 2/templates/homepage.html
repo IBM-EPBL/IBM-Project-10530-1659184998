@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block body %} 
+    <style>
+
+        #main-area{
+            display: flex;
+        }
+
+        #text-area {
+            margin: 100px;
+            margin-top: 300px;
+        }
+
+        #image {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img{
+            width: 500px;
+            height: 500px;
+            margin-top: 200px;
+        }
+
+        p{
+            width: 600px;
+            font-size: 21px;
+            margin: 50px 0px;;
+            color: rgb(26, 135, 171);
+        }
+
+        b{
+            color: rgb(5, 185, 5);
+        }
+
+    </style>
+
+    <div id="main-area">
+        <div id="text-area">
+            <p>Experience the featurised Personal Expense Tracker</p>
+            <p>
+                This application provides various expense tracking features that help manage our expenses.<br>
+                Let's gain the insights on our expenses and improving our <b>LIFESTYLE</b>.
+            </p>
+        </div>
+        <div id="image">
+            <img src="../static/images/expense.png" alt="">
+        </div>
+    </div>
+
+{% endblock %}
