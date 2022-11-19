@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-node-deployment
+spec:
+  selector:
+    app: flask-app
+  ports:
+  - name: http
+    protocol: TCP
+    port: 7777
+    targetPort: 7777
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-node-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flasknode
+  template:
+    metadata:
+      labels:
+        app: flasknode
+    spec:
+      containers:
+      - name: flasknode
+        image: icr.io/flask-node/personal-expense-tracker:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 7777

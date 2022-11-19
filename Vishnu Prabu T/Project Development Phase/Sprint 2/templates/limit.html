@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block body %} 
+
+<style>
+
+    #current-limit {
+        font-size: 21px !important;
+        margin: 100px 50px !important;
+    }
+
+    b {
+        font-weight: 800;
+    }
+
+    p , input{
+        font-size: 18px;
+        margin: 0px 50px;
+    }
+
+    button {
+        border: 0;
+        background-color: rgb(217, 20, 20);
+        padding: 5px 25px;
+        color: white;
+    }
+
+</style>
+
+<p id="current-limit"> Your Monthly Expenses Limit is <b>₹ {{y}}</b> </p>
+
+
+<form action="/changelimit" method="POST">
+
+    <p>Give the Monthly Expenses Limit</p> <br/>
+    <input type="number" name="number" required/> 
+    <span> 
+        <button type="submit">CHANGE</button>
+    </span>
+    
+</form>
+{% endblock %}
